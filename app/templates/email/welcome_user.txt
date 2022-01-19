@@ -1,0 +1,3 @@
+Hello, {{user.username}}
+Welcome to Pitch-App
+Thank you for choosing Pitch-App.Post your best pitches and also get to vote on other pitches.

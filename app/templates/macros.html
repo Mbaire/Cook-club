@@ -1,0 +1,53 @@
+{% macro display(category_list) %}
+<div class="row">
+	{% if category_list %}
+	{% for category in category_list %}
+	<div class="col-md-6">
+		<div class="thumbnail text-center">
+			<h2 class="card-header ">{{category.title}}</h2>
+			<div class="card-body">
+				<blockquote class="blockquote mb-0">
+					<h4>{{category.description}}</h4>
+					<footer> Posted by {{category.user.username}}</footer>
+				</blockquote>
+
+				<a href="{{url_for('main.new_comment',recipeid = category.id)}}" class="btn btn-primary" style="font-family:'Roboto Condensed', sans-serif;"> Comment</a>
+
+				<a href="{{url_for('main.upvote',recipeid = category.id)}}" class="btn btn-success btn-sm" style="font-family:'Roboto Condensed', sans-serif;"> Upvote
+					<span>{{category.upvotes.count()}}</span>
+				</a>
+
+				<a href="{{url_for('main.downvote',recipeid = category.id)}}" class="btn btn-danger btn-sm" style="font-family:'Roboto Condensed', sans-serif;"> Downvote
+					<span>{{category.downvotes.count()}}</span></a>
+
+
+			</div>
+		</div>
+
+	</div>
+	{% endfor %}
+	{% else %}
+	{% endif %}
+</div>
+{% endmacro %}
+
+{% macro displayComment(comments) %}
+<ul>
+
+	{% if comments %}
+	{% for comment in comments %}
+	<div class="row text-center">
+		<a>
+			<p style="color: brown">{{ comment.description }}</p>
+		</a>
+		<small> posted by {{comment.user.username}}</small>
+	</div>
+	{% endfor %}
+	{% else %}
+
+	<h3>No Comments Yet!</h3>
+	{%endif%}
+
+</ul>
+
+{% endmacro %}

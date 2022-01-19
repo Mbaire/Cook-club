@@ -1,0 +1,65 @@
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Lemonada&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<div class="navbar  bg-info" style="background-color:#24cec6;" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+       <a class="navbar-brand text-black" href="/" id="logo">Pitch App</a>
+    </div>
+
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+
+        <li >{{current_user.username}}</li>
+        {% if current_user.is_authenticated %}
+        <li><a href="{{url_for('auth.logout')}}">Sign Out</a></li>
+        {% endif %}
+
+        <li><a href="{{url_for('auth.login')}}">Sign In</a></li>
+
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="overlay">
+    <div class="bgimage">
+      <p class="lead" style="font-family: 'Lemonada', cursive; font-size: 30px;">Welcome to your 60 seconds of fame! </p>
+        <div class="p-3 p-md-5 m-md-3 text-center bg-transparent">
+            <div class="col-md-12 p-lg-5 mx-auto my-5">
+                <div class="display-4">
+                <h1 class="weight" style="font-family: 'Times New Roman', Times, serif; font-size: 40px;">"Make it count"</h1>
+                <hr class="hr">
+                
+                <div id="butt">
+                    <a class="btn" href="/pitches/new/">Create new Pitch</a>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .display-4{
+    margin-top: 80px;
+    margin-bottom: 50px;
+    }
+    .btn:hover{
+    background-color:#d0e9ee;
+    border: 0px;
+    box-shadow: 2px 2px 10px;
+    }
+    .btn{
+    font-size: x-large;
+    font-weight: 500;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: black;
+    border: 2px solid black;
+    background-color:#d0e9ee;
+    border: 0px;
+    box-shadow: 2px 2px 10px;
+    margin-right: 320px;
+    margin-left: 320px;
+    padding:10px;
+    }
+</style>

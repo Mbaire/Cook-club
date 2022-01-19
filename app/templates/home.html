@@ -1,0 +1,59 @@
+{% extends 'bootstrap/base.html' %}
+{% import 'macros.html' as macro %}
+{% block navbar %}
+{% include 'navbar.html'%}
+{% endblock %}
+
+{% block styles %}
+  {{ super() }}
+  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/index.css')}}">
+{% endblock styles %}
+
+
+{% block content %}
+  
+    <h3 class="text-center btn-info"  href="/recipe">Sample Recipe</h3>
+    <br>
+    <div>
+    <ul class="nav nav-pills nav-justified nav-fill" role="tablist" >
+      <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#dessert">Dessert</a> <br>
+      </li> 
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#mains" style="border: 2px solid black;
+    background-color:#d0e9ee;
+    border: 0px;
+    box-shadow: 2px 2px 10px;">Mains</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#soups">Soups</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#general" >General</a>
+      </li>
+    </ul>
+
+  </div>
+  <div class="tab-content">
+    <div id="dessert" class="container tab-pane active"><br>
+      {{ macro.display(dessert) }}
+
+    </div>
+    <div id="mains" class="container tab-pane fade"><br>
+      {{ macro.display(mains) }}
+    </div>
+    <div id="soups" class="container tab-pane fade"><br>
+      {{ macro.display(soups)}}
+    </div>
+    <div id="general" class="container tab-pane fade"><br>
+      {{ macro.display(general) }}
+    </div>
+<br><br><br>
+  </div>
+  <style>
+    .nav-link{
+      font-size: x-large;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+  </style>
+{% endblock %}
