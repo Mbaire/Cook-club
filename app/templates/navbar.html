@@ -1,14 +1,28 @@
 <head>
     <link href="https://fonts.googleapis.com/css?family=Lemonada&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
 </head>
-<div class="navbar  bg-info" style="background-color:#24cec6;" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-       <a class="navbar-brand text-black" href="/" id="logo">Recipe App</a>
-    </div>
 
-    <div class="navbar-collapse collapse">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Cook Club</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/recipe/new">Recipe</a>
+        </li>
+
+      </ul>
       <ul class="nav navbar-nav navbar-right">
 
         <li >{{current_user.username}}</li>
@@ -21,45 +35,22 @@
       </ul>
     </div>
   </div>
-</div>
+</nav>
 <div class="overlay">
     <div class="bgimage">
-      <p class="lead" style="font-family: 'Lemonada', cursive; font-size: 30px;">Welcome to your 60 seconds of fame! </p>
+      <!-- <p class="lead" style="font-family: 'Lemonada', cursive; font-size: 30px;">Welcome To The COOK CLUB!! </p> -->
         <div class="p-3 p-md-5 m-md-3 text-center bg-transparent">
             <div class="col-md-12 p-lg-5 mx-auto my-5">
                 <div class="display-4">
-                <h1 class="weight" style="font-family: 'Times New Roman', Times, serif; font-size: 40px;">"Make it count"</h1>
+                <h1 class="weight" style="font-family: 'Times New Roman', Times, serif; font-size: 40px;">“A recipe has no soul. You as the cook must bring soul to the recipe.”
+                  – Thomas Keller</h1>
                 <hr class="hr">
                 
                 <div id="butt">
-                    <a class="btn" href="/recipe/new/">Create new Recipe</a>
+                    <a class="btn" href="/recipe/new/">Create new Recipe +</a>
                 </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<style>
-    .display-4{
-    margin-top: 80px;
-    margin-bottom: 50px;
-    }
-    .btn:hover{
-    background-color:#d0e9ee;
-    border: 0px;
-    box-shadow: 2px 2px 10px;
-    }
-    .btn{
-    font-size: x-large;
-    font-weight: 500;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: black;
-    border: 2px solid black;
-    background-color:#d0e9ee;
-    border: 0px;
-    box-shadow: 2px 2px 10px;
-    margin-right: 320px;
-    margin-left: 320px;
-    padding:10px;
-    }
-</style>
