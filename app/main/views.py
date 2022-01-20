@@ -28,7 +28,7 @@ def index():
     return render_template('home.html', title = title, recipe = recipe, dessert=dessert, mains=mains, soups=soups, general=general, upvotes=upvotes)
     
 
-@main.route('/recipees/new/', methods = ['GET','POST'])
+@main.route('/recipe/new/', methods = ['GET','POST'])
 @login_required
 def new_recipe():
     form = RecipeForm()
@@ -45,7 +45,7 @@ def new_recipe():
         
         
         return redirect(url_for('main.index'))
-    return render_template('recipees.html',form=form)
+    return render_template('recipe.html',form=form)
 
 
 

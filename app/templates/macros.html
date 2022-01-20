@@ -11,13 +11,13 @@
 					<footer> Posted by {{category.user.username}}</footer>
 				</blockquote>
 
-				<a href="{{url_for('main.new_comment',recipeid = category.id)}}" class="btn btn-primary" style="font-family:'Roboto Condensed', sans-serif;"> Comment</a>
+				<a href="{{url_for('main.new_comment',recipe_id = category.id)}}" class="btn btn-primary" style="font-family:'Roboto Condensed', sans-serif;"> Comment</a>
 
-				<a href="{{url_for('main.upvote',recipeid = category.id)}}" class="btn btn-success btn-sm" style="font-family:'Roboto Condensed', sans-serif;"> Upvote
+				<a href="{{url_for('main.upvote',recipe_id = category.id)}}" class="btn btn-success btn-sm" style="font-family:'Roboto Condensed', sans-serif;"> Upvote
 					<span>{{category.upvotes.count()}}</span>
 				</a>
 
-				<a href="{{url_for('main.downvote',recipeid = category.id)}}" class="btn btn-danger btn-sm" style="font-family:'Roboto Condensed', sans-serif;"> Downvote
+				<a href="{{url_for('main.downvote',recipe_id = category.id)}}" class="btn btn-danger btn-sm" style="font-family:'Roboto Condensed', sans-serif;"> Downvote
 					<span>{{category.downvotes.count()}}</span></a>
 
 
