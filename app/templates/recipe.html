@@ -1,12 +1,48 @@
-{% import 'bootstrap/wtf.html' as wtf %} {% extends 'bootstrap/base.html' %} {%
-    include 'navbar.html'%} {% block content %}
+{% import 'bootstrap/wtf.html' as wtf %} 
+{% import 'macros.html' as macro %}
+{% extends 'bootstrap/base.html' %}
+{%include 'navbar.html'%}
+
+{% block content %}
     
-    {% block styles %}
-      {{ super() }}
-      <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/index.css')}}">
-    {% endblock styles %}
-    
-    
+{% block styles %}
+{{ super() }}
+  <!-- <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/index.css')}}"> -->
+{% endblock styles %}
+
+
+{% block meal %}
+    <div>
+      <ul class="nav nav-pills nav-justified nav-fill" role="tablist" >
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#dessert" style="border: 2px solid black;
+          background-color:#d0e9ee;
+          border: 0px;
+          box-shadow: 2px 2px 10px;">Dessert</a> <br>
+        </li> 
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#mains" style="border: 2px solid black;
+          background-color:#d0e9ee;
+          border: 0px;
+          box-shadow: 2px 2px 10px;">Mains</a>
+        </li>
+        <li class="nav-item">
+          <a class
+            ="nav-link" data-toggle="tab" href="#soups" style="border: 2px solid black;
+          background-color:#d0e9ee;
+          border: 0px;
+          box-shadow: 2px 2px 10px;">Soups</a>
+        </li>
+        <li class="nav-item">
+          <a class
+            ="nav-link" data-toggle="tab" href="#general" style="border: 2px solid black;
+          background-color:#d0e9ee;
+          border: 0px;
+          box-shadow: 2px 2px 10px;">General</a>
+        </li>
+      </ul>
+      </ul>
+
     <div class="container">
       <div class="row">
         <div style="color :black">
@@ -15,13 +51,14 @@
             {% for recipe in recipees %}
             <div class="list-group">
               <a href="#">
-                <div class="list-item">
-                  <h2>{{recipe.id}}</h2>
+                  <div class="list-item">
+                    <h2>{{recipe.id}}</h2>
                 </div>
                 <p>{{ recipe.description }}</p>
                 <p>Posted by {{user.username}}.</p>
               </a>
             </div>
+            
             {% endfor %}
           </ul>
       </div>

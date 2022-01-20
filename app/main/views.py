@@ -26,7 +26,11 @@ def index():
     
 
     return render_template('home.html', title = title, recipe = recipe, dessert=dessert, mains=mains, soups=soups, general=general, upvotes=upvotes)
+
+@main.route('/about')
+def about():
     
+    return render_template('about.html')    
 
 @main.route('/recipe/new/', methods = ['GET','POST'])
 @login_required

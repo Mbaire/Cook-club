@@ -1,0 +1,35 @@
+{% extends 'bootstrap/base.html' %}
+{% block navbar %}
+{% include 'navbar.html'%}
+{% endblock %}
+
+{% block content %}
+
+{% block styles %}
+  {{ super() }}
+  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/about.css')}}">
+{% endblock styles %}
+
+<div class="container">
+    <div class="row mt-5 mb-5 pt-5 pb-5">
+        <div class="col">
+            <h1 class="text title">About us</h1>
+            <h4 class="text">Our name is Cook Club and we are a new recipe site with the proposal of providing a fast and reliable way to get recipes and share receipes. We have a catalog of receipes you can browse through or submit your own recipe. </h4>
+        </div>
+        <div class="col">
+            <img src="static/images/tray1.jpg" class="img-responsive">
+        </div>
+    </div>
+    <div class="row row mt-5 pt-5 pb-5">
+        <div class="col">
+            <img src="static/images/about2.jpg" class="img-responsive">
+        </div>
+        <div class="col">
+            <h1 class="text title">Services</h1>
+            <h4 class="text"> We offer an easy way to find healthy recipes to delicious food. We have a thriving community that wants to share their recipes. Welcome to Cook Club.
+            </h4>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

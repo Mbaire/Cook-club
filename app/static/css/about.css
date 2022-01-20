@@ -1,0 +1,9 @@
+.title{
+    font-size: 10vh;
+    text-align: center;
+}
+
+.img-responsive{
+    display: block;
+    max-height: 40vh;
+}

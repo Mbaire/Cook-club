@@ -1,8 +1,8 @@
 {% extends 'bootstrap/base.html' %}
 {% import 'macros.html' as macro %}
-{% block navbar %}
+
 {% include 'navbar.html'%}
-{% endblock %}
+
 
 {% block styles %}
   {{ super() }}
@@ -11,9 +11,61 @@
 
 
 {% block content %}
+
+<div class="overlay">
+  <div class="bgimage">
+    <!-- <p class="lead" style="font-family: 'Lemonada', cursive; font-size: 30px;">Welcome To The COOK CLUB!! </p> -->
+      <div class="p-3 p-md-5 m-md-3 text-align center bg-image ">
+          <!-- <div class="col-md-12 p-lg-5 mx-auto my-5"> -->
+              <div class="display-4">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+              
+              <h1 class="weight" style="font-family: 'Times New Roman', Times, serif; font-size: 60px; color:black"> “A recipe has no soul. You as the cook must bring soul to the recipe.”
+                </h1>
+                <h2>– Thomas Keller</h2>
+              <hr class="hr">
+              <br>
+              <br>
+              <br>
+    
+              <div id="butt">
+                  <a class="btn btn-lg btn-primary" href="{{url_for('auth.login')}}">Log In</a>
+              </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
   
-    <h3 class="text-center btn-info"  href="/recipe">Recipe Ideas</h3>
+    <!-- <h3 class="text-center btn-info"  href="/recipe">Recipe Ideas</h3>
     <br>
+
+    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="5000">
+              <img src="{{ url_for('static', filename='app/static/images/cake1.jpg') }}" class="d-block w-100">
+          </div>
+          <div class="carousel-item" data-bs-interval="5000">
+              <img src="{{ url_for('static', filename='/app/static/images/pizza.jpg') }}" class="d-block w-100">
+          </div>
+          <div class="carousel-item" data-bs-interval="5000">
+              <img src="{{ url_for('static', filename='/app/static/images/nyama2.jpg') }}" class="d-block w-100">
+          </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+      </button>
+  </div> 
+  
     <div>
     <ul class="nav nav-pills nav-justified nav-fill" role="tablist" >
       <li class="nav-item">
@@ -40,7 +92,7 @@
         border: 0px;
         box-shadow: 2px 2px 10px;">General</a>
       </li>
-    </ul>
+    </ul> -->
 
   </div>
   <div class="tab-content">
@@ -61,10 +113,19 @@
   
 
 
-  <!-- <style>
-    .nav-link{
-      font-size: x-large;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  <style>
+    .overlay{
+    text-align: center;
+    background-image: url("/static/images/background1.jpeg");
+    color: white;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-size: 18px;
+    min-height:700px;
+
     }
-  </style> -->
+  </style>
+
+  
 {% endblock %}

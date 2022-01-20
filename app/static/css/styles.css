@@ -1,6 +1,8 @@
 .display-4{
-    margin-top: 80px;
-    margin-bottom: 50px;
+    top: 100px;
+    /* bottom: 50px; */
+    position: relative;
+    
     }
     .btn:hover{
     background-color:#d0e9ee;
@@ -20,3 +22,4 @@
     margin-left: 320px;
     padding:10px;
     }
+
